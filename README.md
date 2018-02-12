@@ -13,4 +13,11 @@ There should also be a folder containing the dataset. If your dataset is large (
 Notes
 -----
 
-We obviously won't be grading you on the cleanliness of your repository but please keep it as clean and usable as possible. Try to keep it relatively small and leave large datasets/packages out of your repository. Make sure to keep a well updated README.
+Milestone 1
+Milestone 2
+Optional 4
+Optional 6
+Milestone 3
+Milestone 4
+Milestone 5
+Optional 10
