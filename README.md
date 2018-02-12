@@ -14,10 +14,18 @@ Notes
 -----
 
 Milestone 1
+
 Milestone 2
+
 Optional 4
+
 Optional 6
+
 Milestone 3
+
 Milestone 4
+
 Milestone 5
+
 Optional 10
+
