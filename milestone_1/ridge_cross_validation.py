@@ -54,7 +54,7 @@ if __name__ == "__main__":
 
     print('Running 10-Fold Cross-Validation, Ridge Regression Model')
 
-    lnlambdas = np.arange(-10,10,0.1)
+    lnlambdas = np.arange(-15,10,0.1)
     lambdas = np.exp(lnlambdas)
     insample = np.zeros_like(lambdas)
     outsample = np.zeros_like(lambdas)
@@ -66,12 +66,13 @@ if __name__ == "__main__":
     print('minimum lambda: %f | in sample error: %.5f | out of sample error: %.5f' % (lambdas[min_index], insample[min_index], outsample[min_index]))
 
     
-    plt.plot(lnlambdas,insample, label='in sample error')
-    plt.plot(lnlambdas,outsample, label='out of sample error')
+    plt.plot(lnlambdas,insample, 'bo-', label='in sample error')
+    plt.plot(lnlambdas,outsample, 'ro-', label='out of sample error')
+    plt.suptitle('10-Fold Cross Validated Ridge Regression',fontsize=16)
     plt.ylabel('Error');
     plt.xlabel('ln(lambda)');
     plt.legend()
 
-    plt.draw()
-    plt.savefig('ridge_lambda.png')
+    #plt.draw()
+    plt.savefig('ridge_lambda.png',dpi=500)
     print('saved to \'ridge_lambda.png\'')
