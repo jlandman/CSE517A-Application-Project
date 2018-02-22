@@ -1,31 +1,9 @@
-Machine Learning (cse517a) Example Application Project
-======================================================
+# Overview
+In this project, we use a variety of ML techniques to develop an algorithm to estimate the number of shares an article will receive. The [dataset](https://archive.ics.uci.edu/ml/datasets/Online+News+Popularity) is extracted from close to 40,000 articles posted on Mashable.com, and provided by the UCI Machine Learning Repository. 
 
-This repository serves as an example for your application project. Feel free to fork this repository if you would like a starting point.
-
-Folder Setup
-------------
-
-Each milestone should have an accompanying folder in which all of the code and resources for that milestone should be contained. Each folder should have a README file which describes what you are doing and the the approach taken, the README file should also contain instructions on how to run the code including outside packages/resources needed to run the code.
-
-There should also be a folder containing the dataset. If your dataset is large (or just in general it is good practice even if it is not large) you should add a .gitignore so that your dataset does not appear in the repository. But please describe where to put the files in this folder so that the TAs can run the code is necessary.
-
-Notes
------
-
-Milestone 1
-
-Milestone 2
-
-Optional 4
-
-Optional 6
-
-Milestone 3
-
-Milestone 4
-
-Milestone 5
-
-Optional 10
-
+This project was created for CSE517A SP2018 at Washington University in St. Louis. Each milestone is contained in its respective folder.
+## Group Members:
+* Josh Landman
+* Zach Glick
+* Amanda Kube
+* Alex Herriott
