@@ -16,7 +16,10 @@ All files can be run independently using Python 3.
 
 The file target_comparison.py generates histograms that show the rationale behind estimating the logarithm of the number of shares, rather than the number itself.
 
-The file ridge_cross_validation.py can performs 10-fold cross validation on the data using a ridge regression model. The cross-validation error is minimized over possible values of lambda, and both the training and cross-validation error are plotted as a function of lambda.
+The file ridge_cross_validation.py performs 10-fold cross validation on the data using a ridge regression model. The cross-validation error is minimized over possible values of lambda, and both the training and cross-validation error are plotted as a function of lambda.
 
-The file ?.py trains a ridge regression model (with the lambda mentioned above) and breaks down the efficacy of the various types of features used.
+The file featurePlotter.py trains a ridge regression model (with the lambda mentioned above) and breaks down the impact of the various types of features used.
+
+The file modelEvaluator.py trains a ridge regression model on a randomly selected training and test set (80% training, 20% test) 100 times to generate average in and out of sample mean error, mean squared error, and R^2 values.
+
 
