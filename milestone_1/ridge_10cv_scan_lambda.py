@@ -1,4 +1,5 @@
 import numpy as np
+import math
 from sklearn import linear_model
 from sklearn.model_selection import KFold
 import matplotlib.pyplot as plt
@@ -45,10 +46,11 @@ if __name__ == "__main__":
 
     data = [line.split(',') for line in data]
     data = np.array(data)
-    
+    data = data[:,2:].astype(float)
+
     np.random.shuffle(data)
 
-    X = data[:,2:-1].astype(float)
+    X = data[:,:-1].astype(float)
     Y = data[:,-1:].astype(float)
     Y = np.log(Y)
 
@@ -59,6 +61,7 @@ if __name__ == "__main__":
     insample = np.zeros_like(lambdas)
     outsample = np.zeros_like(lambdas)
     for i, l in enumerate(lambdas):
+        pass
         insample[i], outsample[i] = cross_val_error(X,Y,l)
         #print('lambda: %f | in sample error: %.5f | out of sample error: %.5f' % (lambdas[i], insample[i], outsample[i]))
     
@@ -66,8 +69,8 @@ if __name__ == "__main__":
     print('minimum lambda: %f | in sample error: %.5f | out of sample error: %.5f' % (lambdas[min_index], insample[min_index], outsample[min_index]))
 
     
-    plt.plot(lnlambdas,insample, 'bo-', label='in sample error')
-    plt.plot(lnlambdas,outsample, 'ro-', label='out of sample error')
+    plt.plot(lnlambdas,insample, 'bo-', label='training error')
+    plt.plot(lnlambdas,outsample, 'ro-', label='cross validation error')
     plt.suptitle('10-Fold Cross Validated Ridge Regression',fontsize=16)
     plt.ylabel('Error');
     plt.xlabel('ln(lambda)');
@@ -75,4 +78,4 @@ if __name__ == "__main__":
 
     #plt.draw()
     plt.savefig('ridge_lambda.png',dpi=500)
-    print('saved to \'ridge_lambda.png\'')
+    print('saved plot to \'ridge_lambda.png\'')
