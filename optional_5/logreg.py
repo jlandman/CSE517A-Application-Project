@@ -45,7 +45,7 @@ bestAlpha = 0
 bestVal = 1
 valAccs = np.empty((alphas.shape))
 
-print 'Cross-validating for best penalty hyperparameter...'
+print 'Cross-validating for best step size hyperparameter...'
 for alpha in xrange(len(alphas)):
     print '\tTraining logistic regression classifier with alpha={}'.format(alphas[alpha])
     vals = []
