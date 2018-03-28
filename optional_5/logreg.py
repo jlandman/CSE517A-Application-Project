@@ -67,4 +67,3 @@ for alpha in xrange(len(alphas)):
 np.savetxt('lr_vals.txt', valAccs)
 print 'Best alpha = {}'.format(bestAlpha)
 print 'Best validation error = {}'.format(bestVal)
-print repr(valAccs)
