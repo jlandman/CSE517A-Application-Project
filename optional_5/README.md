@@ -2,7 +2,7 @@
 
 This optional task involved the evaluating and comparing two different models and statistically testing them to see if there was a significant difference in their validations accuracies on our dataset. To complete this task, we used the SVM trained for Optional Task 4 and a logistic regression classifier using stochastic gradient descent. 
 
-To train the logistic regression classifier, we used 10-fold cross validation to choose the optimal __alpha__ parameter for step size. The plot below shows the validation error as a function of __alpha__. To keep future statistical testing valid, we used N = 4000, just like we did for the support vector machine with RBF kernel that was used in Optional Task 4.
+To train the logistic regression classifier, we used 10-fold cross validation to choose the optimal _α_ parameter for step size. The plot below shows the validation error as a function of _α_. To keep future statistical testing valid, we used N = 4000, just like we did for the support vector machine with RBF kernel that was used in Optional Task 4.
 ![LR Alpha Plot](lr_err_graph.png)
 
 To run these files, run `classifysvm.m` in the optional_4 folder; `logreg.py` in this folder; and then `modeleval.py` and `plotVals.py`.
