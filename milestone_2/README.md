@@ -24,4 +24,4 @@ The file rbf.R uses 10-fold cross validation to find the best parameter value fo
 
 The file best.R uses 10-fold cross validation to compare Gaussian Processes using the linear kernel, the polynomial kernel with parameter values found using polynomial.R and the rbf kernel with parameter value found using rbf.R.
 
-The file main.R was written to run each of the above files in succession. It then fits the best model found using the previous files using all of the training data and evaluates the performance using MSE and NLPD on a test set.
+The file main.R was written to run each of the above files in succession. It then fits the best model found using the previous files using all of the training data and evaluates the performance using MAE and NLPD on a test set.
