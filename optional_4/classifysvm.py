@@ -74,5 +74,3 @@ for c in xrange(len(C)):
 np.savetxt('svm_vals.txt', valErrs)
 print 'Best C = {}, best gamma = {}'.format(bestC, bestG)
 print 'Best validation error = {}'.format(bestVal)
-
-print valErrs
