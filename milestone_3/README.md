@@ -9,9 +9,9 @@ We built models using 2-component PCA and 3-component PCA in addition to our reg
 ------------ | -------------
 ![pca2](pca2.png)        | ![pca3](pca3.png)
 
-After training these models, we used 50 runs of 10-fold cross validation to create a dataset for statistical comparison of the models. Using a one-way ANOVA test, we found statistical significance for differences across the three models (`F=5.7107`, `p=0.0041`). Using Fisher's LSD for post-hoc testing, we found no differences between the two PCA-based models (`t=-0.0508`, `p=0.9597`). We did, however, find differences between the PCA classifiers and the non-PCA classifier: the 2-component PCA model showed statistically significant differences from the non-PCA classifier (`t=4.1573`, `p=0.0001`) and the 3-component PCA model showed statistically significant differences from the non-PCA classifier (`t=4.0996`, `p=0.0002`).
+After training these models, we used 50 runs of 10-fold cross validation to create a dataset for statistical comparison of the models. Using a one-way ANOVA test, we found statistical significance for differences across the validation errors of the three models (`F=5.7107`, `p=0.0041`). Using Fisher's LSD for post-hoc testing, we found no differences between the two PCA-based models (`t=-0.0508`, `p=0.9597`). We did, however, find differences between the PCA classifiers and the non-PCA classifier: the 2-component PCA model showed statistically significant differences from the non-PCA classifier (`t=4.1573`, `p=0.0001`) and the 3-component PCA model showed statistically significant differences from the non-PCA classifier (`t=4.0996`, `p=0.0002`).
 
-The means of the classifiers are as follows:
+The mean validation errors of the stochastic gradient descent logistic regression classifiers are as follows:
 
 Classifier  | Mean
 ------------|-----------
