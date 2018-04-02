@@ -1,7 +1,7 @@
 Milestone 3
 ===========
 
-This milestone consisted of performing PCA on our dataset and comparing models built both with and without PCA having been performed on the data used for training. We used a stochastic gradient descent-based logistic regression classifier as basis for comparison for models. 
+This milestone consisted of performing PCA on our dataset and comparing models built both with and without PCA having been performed on the data used for training. We used a stochastic gradient descent-based logistic regression classifier as basis for comparison for models. The full dataset was used to perform cross-validation on all models.
 
 We built models using 2-component PCA and 3-component PCA in addition to our regular SGD logistic regression classifier. Visualizations of the new feature spaces can be found below:
 
