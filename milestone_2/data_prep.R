@@ -9,7 +9,7 @@ data <- read.csv(datsite)
 data <- data[complete.cases(data),]
 rand <- sample.int(39644, size = 39644, replace = FALSE, prob = NULL)
 data <- data[rand,]
-data <- data[1:3000,] #Training for the whole dataset is computationally intensive and time consuming so we show results for a random partition of the dataset
+data <- data[1:500,] #Training for the whole dataset is computationally intensive and time consuming so we show results for a random partition of the dataset
 data$logshares<- log(data$shares)
 data <- select(data,-url,-shares)
 
