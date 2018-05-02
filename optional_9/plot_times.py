@@ -60,11 +60,5 @@ plt.show()
 
 
 
-plt.scatter(err_GP_train, err_GP_test)
-plt.xlabel("Training MAE")
-plt.ylabel("Testing MAE")
-plt.show()
-
-
 
 

@@ -31,11 +31,6 @@ pca3_testError = []
 pca3_trainTime = []
 pca3_testTime = []
 
-# lr_trainError = []
-# lr_testError = []
-# lr_trainTime = []
-# lr_testTime = []
-
 
 numIters = 100
 for i in xrange(numIters):
@@ -87,54 +82,32 @@ for i in xrange(numIters):
     pca3_trainTime.append(startTest - startTrain)
     pca3_testTime.append(end - startTest)
 
-    # X_train = pca3.inverse_transform(X_train)
-    # X_test = pca3.inverse_transform(X_test)
-    # lrClf = SGDRegressor(penalty='l2', alpha=pca_alpha, learning_rate='optimal', max_iter=1000, tol=1e-3)
-    # startTrain = time()
-    # lrClf.fit(X_train, y_train)
-    # startTest = time()
-    # Ytr_pred = lrClf.predict(X_train)
-    # Yte_pred = lrClf.predict(X_test)
-    # end = time()
-    # lr_trainError.append(mean_absolute_error(y_train, Ytr_pred))
-    # lr_testError.append(mean_absolute_error(y_test, Yte_pred))
-    # lr_trainTime.append(startTest - startTrain)
-    # lr_testTime.append(end - startTest)
-
-
 print("NumSamples: ",numIters)
 print("Average Mean Absolute Training Error:")
 print("\tPCA2: ",np.mean(pca2_trainError))
 print("\tPCA3: ",np.mean(pca3_trainError))
-# print("\tNo PCA: ",np.mean(lr_trainError))
+
 print
 print("Average Mean Absolute Testing Error:")
 print("\tPCA2: ",np.mean(pca2_testError))
 print("\tPCA3: ",np.mean(pca3_testError))
-# print("\tNo PCA: ",np.mean(lr_testError))
+
 print
 print("Average Training Time:")
 print("\tPCA2: ",np.mean(pca2_trainTime))
 print("\tPCA3: ",np.mean(pca3_trainTime))
-# print("\tNo PCA: ",np.mean(lr_trainTime))
+
 print
 print("Average Testing Time:")
 print("\tPCA2: ",np.mean(pca2_testTime))
 print("\tPCA3: ",np.mean(pca3_testTime))
-# print("\tNo PCA: ",np.mean(lr_testTime))
-print
 
-np.savetxt('pca2_TrainingTime.txt', pca2_trainTime)
-np.savetxt('pca2_TestingTime.txt', pca2_testTime)
-np.savetxt('pca2_TrainError.txt', pca2_trainError)
-np.savetxt('pca2_TestError.txt', pca2_testError)
+np.savetxt('timing_data/train_time_pca2.csv', pca2_trainTime)
+np.savetxt('timing_data/test_time_pca2.csv', pca2_testTime)
+np.savetxt('../milestone_4/error_data/train_error_pca2.csv', pca2_trainError)
+np.savetxt('../milestone_4/error_data/test_error_pca2.csv', pca2_testError)
 
-np.savetxt('pca3_TrainingTime.txt', pca3_trainTime)
-np.savetxt('pca3_TestingTime.txt', pca3_testTime)
-np.savetxt('pca3_TrainError.txt', pca3_trainError)
-np.savetxt('pca3_TestError.txt', pca3_testError)
-
-# np.savetxt('lr_TrainingTime.txt', lr_trainTime)
-# np.savetxt('lr_TestingTime.txt', lr_testTime)
-# np.savetxt('lr_TrainError.txt', lr_trainError)
-# np.savetxt('lr_TestError.txt', lr_testError)
+np.savetxt('timing_data/train_time_pca3.csv', pca3_trainTime)
+np.savetxt('timing_data/test_time_pca3.csv', pca3_testTime)
+np.savetxt('../milestone_4/error_data/train_error_pca3.csv', pca3_trainError)
+np.savetxt('../milestone_4/error_data/test_error_pca3.csv', pca3_testError)

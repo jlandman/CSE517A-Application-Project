@@ -57,20 +57,10 @@ print("Mean Testing Time: ",np.mean(testTimeData))
 print("Mean Train Error: ",np.mean(trainError))
 print("Mean Test Error: ",np.mean(testError))
 
-np.savetxt('RidgeTrainingTime.txt', trainTimeData)
-np.savetxt('RidgeTestingTime.txt', testTimeData)
-np.savetxt('RidgeTrainError.txt', trainError)
-np.savetxt('RidgeTestError.txt', testError)
-
-pyplot.hist(trainTimeData, bins=50)
-pyplot.title('Ridge Regression Training Time')
-pyplot.draw()
-pyplot.show()
-
-pyplot.hist(testTimeData, bins=50)
-pyplot.title('Ridge Regression Test Time')
-pyplot.draw()
-pyplot.show()
+np.savetxt('timing_data/train_time_ridge.csv', trainTimeData)
+np.savetxt('timing_data/test_time_ridge.csv', testTimeData)
+np.savetxt('../milestone_4/error_data/train_error_ridge.csv', trainError)
+np.savetxt('../milestone_4/error_data/test_error_ridge.csv', testError)
 
 
 
