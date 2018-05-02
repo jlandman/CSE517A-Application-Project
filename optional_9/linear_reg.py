@@ -1,7 +1,8 @@
 from sklearn import linear_model
 import numpy as np
 from matplotlib import pyplot
-from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error, explained_variance_score
+from sklearn.metrics import mean_absolute_error
+from time import time
 
 with open('../dataset/OnlineNewsPopularity/OnlineNewsPopularity.csv', 'r') as file:
     input = file.readlines()
@@ -14,52 +15,64 @@ data = np.array(data)
 data = data[:,2:].astype(float)
 data[:,-1:]=np.log(data[:,-1:])
 
+
 numIters = 100
-inMean = np.zeros(numIters)
-inMeanSq = np.zeros(numIters)
-inR_2 = np.zeros(numIters)
-outMean = np.zeros(numIters)
-outMeanSq = np.zeros(numIters)
-outR_2 = np.zeros(numIters)
-inExpVar = np.zeros(numIters)
-outExpVar = np.zeros(numIters)
+trainTimeData = [0] * numIters
+testTimeData = [0] * numIters
+trainError = []
+testError = []
+
+
 for i in range(0,numIters):
     np.random.shuffle(data)
     X = data[:, :-1]
     Y = data[:, -1:]
 
     numPoints = len(Y)
-    pTrain = 0.8
+    pTrain = 0.9
     index = int(numPoints*pTrain)
     Xtr = X[index:,:]
     Ytr = Y[index:,:]
     Xte = X[:index,:]
     Yte = Y[:index,:]
 
+    #Start Timing (data split is not part of timing)
+    startTrain = time()
     reg = linear_model.Ridge(alpha=0.05, fit_intercept=True, normalize=True)
     reg.fit(Xtr, Ytr)
-
+    startTest = time()
     Ytr_pred = reg.predict(Xtr)
     Yte_pred = reg.predict(Xte)
+    end = time()
+    trainError.append(mean_absolute_error(Ytr, Ytr_pred))
+    testError.append(mean_absolute_error(Yte, Yte_pred))
 
-    inMean[i] = mean_absolute_error(Ytr,Ytr_pred)
-    inMeanSq[i] = mean_squared_error(Ytr, Ytr_pred)
-    inR_2[i] = r2_score(Ytr, Ytr_pred)
-    inExpVar[i] = explained_variance_score(Ytr, Ytr_pred)
-    outMean[i] = mean_absolute_error(Yte,Yte_pred)
-    outMeanSq[i] = mean_squared_error(Yte, Yte_pred)
-    outR_2[i] = r2_score(Yte, Yte_pred)
-    outExpVar[i] = explained_variance_score(Yte, Yte_pred)
+    trainTimeData[i] = startTest - startTrain
+    testTimeData[i] = end - startTest
 
-print("In Sample:")
-print("Mean Error: ",np.mean(inMean))
-print("Mean Squared Error: ",np.mean(inMeanSq))
-print("R^2 score: ",np.mean(inR_2))
 
-print("Out of Sample:")
-print("Mean Error: ",np.mean(outMean))
-print("Mean Squared Error: ",np.mean(outMeanSq))
-print("R^2 score: ",np.mean(outR_2))
+print("NumSamples: ",numIters)
+print("Mean Training Time: ",np.mean(trainTimeData))
+print("Mean Testing Time: ",np.mean(testTimeData))
+print("Mean Train Error: ",np.mean(trainError))
+print("Mean Test Error: ",np.mean(testError))
+
+np.savetxt('RidgeTrainingTime.txt', trainTimeData)
+np.savetxt('RidgeTestingTime.txt', testTimeData)
+np.savetxt('RidgeTrainError.txt', trainError)
+np.savetxt('RidgeTestError.txt', testError)
+
+pyplot.hist(trainTimeData, bins=50)
+pyplot.title('Ridge Regression Training Time')
+pyplot.draw()
+pyplot.show()
+
+pyplot.hist(testTimeData, bins=50)
+pyplot.title('Ridge Regression Test Time')
+pyplot.draw()
+pyplot.show()
+
+
 
 
 
