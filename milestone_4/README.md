@@ -1,26 +1,22 @@
-Milestone 4
+Milestone 1
 ===========
 
-Folders
--------
 
-Each milestone folder should include the following
-
-* All code you wrote/used
-* A README file
-
-They should not include
-
-* Datasets
-* Large packages
-
-README
+BACKGROUND
 ------
 
-The README file should include
+This folder contains the resources used for the fourth milestone of the 517a application project. 
 
-* Description of what your team did
-* Methods used to accomplish each part
-* Potential difficulties faced
-* Resources used
-* Description of how to run the code in the folder
+The goal of this milestone was to compare the accuracy of the various models studied this semester for both training and testing. These regression models were applied to the same dataset in order to predict the number of times an article was shared using a variety of features including the subject, weekday published, sentiment, etc. Check out the wiki for more information about the procedure and results.
+
+CODE
+------
+
+The recorded mean errors of the various trials are found in the folder error_data
+
+The file plot_errors.py generates the plots in the graphs directory using the error data. It also performs t-tests to determine if any of the numtimes are significantly faster.
+
+Libraries used include numpy, scikit-learn, and matplotlib
+
+
+
