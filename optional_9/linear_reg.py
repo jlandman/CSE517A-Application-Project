@@ -59,8 +59,8 @@ print("Mean Test Error: ",np.mean(testError))
 
 np.savetxt('timing_data/train_time_ridge.csv', trainTimeData)
 np.savetxt('timing_data/test_time_ridge.csv', testTimeData)
-np.savetxt('../milestone_4/error_data/train_error_ridge.csv', trainError)
-np.savetxt('../milestone_4/error_data/test_error_ridge.csv', testError)
+# np.savetxt('../milestone_4/error_data/train_error_ridge.csv', trainError)
+# np.savetxt('../milestone_4/error_data/test_error_ridge.csv', testError)
 
 
 

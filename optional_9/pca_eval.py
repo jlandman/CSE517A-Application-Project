@@ -1,7 +1,6 @@
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import SGDRegressor
-from sklearn.linear_model import Ridge
 from sklearn.decomposition import PCA
 import numpy as np
 from time import time
@@ -104,10 +103,10 @@ print("\tPCA3: ",np.mean(pca3_testTime))
 
 np.savetxt('timing_data/train_time_pca2.csv', pca2_trainTime)
 np.savetxt('timing_data/test_time_pca2.csv', pca2_testTime)
-np.savetxt('../milestone_4/error_data/train_error_pca2.csv', pca2_trainError)
-np.savetxt('../milestone_4/error_data/test_error_pca2.csv', pca2_testError)
+# np.savetxt('../milestone_4/error_data/train_error_pca2.csv', pca2_trainError)
+# np.savetxt('../milestone_4/error_data/test_error_pca2.csv', pca2_testError)
 
 np.savetxt('timing_data/train_time_pca3.csv', pca3_trainTime)
 np.savetxt('timing_data/test_time_pca3.csv', pca3_testTime)
-np.savetxt('../milestone_4/error_data/train_error_pca3.csv', pca3_trainError)
-np.savetxt('../milestone_4/error_data/test_error_pca3.csv', pca3_testError)
+# np.savetxt('../milestone_4/error_data/train_error_pca3.csv', pca3_trainError)
+# np.savetxt('../milestone_4/error_data/test_error_pca3.csv', pca3_testError)
