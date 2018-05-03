@@ -22,12 +22,12 @@ with open('error_data/test_error_Ridge.csv') as f:
     Ridge_test = np.array(lines, dtype = np.float32)
 
 
-with open('error_data/train_error_SVM.csv') as f:
+with open('error_data/train_error_Ridge.csv') as f:
     lines = f.readlines()
     SVM_train = np.array(lines, dtype = np.float32)
 
 
-with open('error_data/test_error_SVM.csv') as f:
+with open('error_data/test_error_Ridge.csv') as f:
     lines = f.readlines()
     SVM_test = np.array(lines, dtype = np.float32)
 

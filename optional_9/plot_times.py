@@ -48,6 +48,20 @@ pca2 = pca2_train+pca2_test
 pca3 = pca3_train+pca3_test
 
 
+print(np.average(Ridge_train))
+print(np.average(Ridge_test))
+
+print(np.average(GP_train))
+print(np.average(GP_test))
+
+#print(np.average(SVM_train))
+#print(np.average(SVM_test))
+
+print(np.average(pca2_train))
+print(np.average(pca2_test))
+
+print(np.average(pca3_train))
+print(np.average(pca3_test))
 
 
 tstat, pval = ttest_ind(Ridge,GP)
