@@ -22,6 +22,16 @@ with open('timing_data/test_time_Ridge.csv') as f:
     Ridge_test = np.array(lines, dtype = np.float32)
 
 
+with open('timing_data/train_time_svm.csv') as f:
+    lines = f.readlines()
+    SVM_train = np.array(lines, dtype = np.float32)
+
+
+with open('timing_data/test_time_svm.csv') as f:
+    lines = f.readlines()
+    SVM_test = np.array(lines, dtype = np.float32)
+
+
 with open('timing_data/train_time_pca2.csv') as f:
     lines = f.readlines()
     pca2_train = np.array(lines, dtype = np.float32)
@@ -43,7 +53,7 @@ with open('timing_data/test_time_pca3.csv') as f:
 
 Ridge = Ridge_train+Ridge_test
 GP = GP_train+GP_test
-SVM = Ridge #SVM_train+SVM_test
+SVM = SVM_train+SVM_test
 pca2 = pca2_train+pca2_test
 pca3 = pca3_train+pca3_test
 
@@ -54,8 +64,8 @@ print(np.average(Ridge_test))
 print(np.average(GP_train))
 print(np.average(GP_test))
 
-#print(np.average(SVM_train))
-#print(np.average(SVM_test))
+print(np.average(SVM_train))
+print(np.average(SVM_test))
 
 print(np.average(pca2_train))
 print(np.average(pca2_test))
@@ -123,6 +133,22 @@ plt.xlabel('Testing Time (sec)')
 plt.ylabel('Count')
 plt.title('Histogram of Ridge Regression Testing')
 plt.savefig('graphs/Ridge_test.png')
+plt.show()
+
+
+plt.hist(SVM_train)
+plt.xlabel('Training Time (sec)')
+plt.ylabel('Count')
+plt.title('Histogram of SVM Regression Training')
+plt.savefig('graphs/SVM_train.png')
+plt.show()
+
+
+plt.hist(SVM_test)
+plt.xlabel('Testing Time (sec)')
+plt.ylabel('Count')
+plt.title('Histogram of SVM Regression Testing')
+plt.savefig('graphs/svm_test.png')
 plt.show()
 
 

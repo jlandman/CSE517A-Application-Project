@@ -22,12 +22,12 @@ with open('error_data/test_error_Ridge.csv') as f:
     Ridge_test = np.array(lines, dtype = np.float32)
 
 
-with open('error_data/train_error_Ridge.csv') as f:
+with open('error_data/train_error_svm.csv') as f:
     lines = f.readlines()
     SVM_train = np.array(lines, dtype = np.float32)
 
 
-with open('error_data/test_error_Ridge.csv') as f:
+with open('error_data/test_error_svm.csv') as f:
     lines = f.readlines()
     SVM_test = np.array(lines, dtype = np.float32)
 
@@ -160,7 +160,7 @@ plt.scatter(pca3_train, pca3_test, label = "3PCR samples")
 plt.xlabel("Training MAE")
 plt.ylabel("Testing MAE")
 plt.title('Comparative Errors')
-plt.legend(loc='upper right')
+plt.legend(loc='upper left')
 plt.savefig('graphs/Comparison.png')
 plt.show()
 
