@@ -7,7 +7,7 @@ BACKGROUND
 
 This folder contains the resources used for the first milestone of the 517a application project. 
 
-The goal of this milestone was to create a linear regression model for the selected dataset that would predict the number of times an article was shared using a variety of features. Check out the wiki for more information about the procedure and results.
+The goal of this milestone was to create a linear regression model for the selected dataset that would predict the number of times an article was shared using a variety of features. [Check out the wiki for more information about the procedure and results.](https://github.com/jlandman/CSE517A-Application-Project/wiki/Milestone-1)
 
 CODE
 ------
